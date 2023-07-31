@@ -1,40 +1,42 @@
 #!/usr/bin/python3
-#EXAMPLE OF MULTIPLE IF  CONDITION.
-pbill=50
-ans="Yes" or "yes"
+#EXAMPLE OF NESTED IF ELSE CONDITION.
 meters="meters"
-height=float(input(f"Enter your height in {meters}:"))
+print("Hello User!")
+Name=str(input(f"What is your name: "))
+height=float(input(f"{Name} Enter your height in {meters}:"))
 kg="kg"
-weight=int(input(f"Enter your weight in {kg}:"))
+weight=int(input(f"{Name} Enter your weight in {kg}:"))
 BMI=weight/height ** 2
 if BMI<=20:
-        print(f"Your BMI is",int(BMI),",you can ride the Carousel if you meet the age requirement")
-        age=int(input("Enter your age:"))
-        if age<12:
+        print(f"{Name} Your BMI is",int(BMI),",you can ride the Carousel if you meet the age requirement.")
+        age=int(input(f"{Name} Enter your age:"))
+        if age<=12:
             pay1=1000
-            print(f"You are {age},and you can ride the Carousel,for {pay1} naira.")
-            answer = str(input("Do you want to take photos during your ride?(Yes/No) "))
-            if answer == ans:
-                print(f"Your subtotal = ", int(pbill) + int(pay1))
+            print(f"{Name} You are {age},and you can ride the Carousel,for {pay1} naira.")
+            answer = str(input(f"{Name} Do you want to take photos during your ride?(Yes/No) "))
+            if answer == "Yes" or answer == "yes":
+                pay1+=50
+                print(f"{Name} Your subtotal = ",int(pay1), "Naira.")
             else:
-                print(f"Your subtotal = ",int(pay1))
+                    print(f"{Name} Your subtotal = ",int(pay1), "Naira.")
         elif age<=18:
             pay2=1500
-            print(f"you are {age},you can ride the Carousel,for {pay2} naira.")
-            answer = str(input("Do you want to take photos during your ride?(Yes/No) "))
-            if answer == ans:
-                print(f"Your subtotal = ", int(pbill) + int(pay2))
+            print(f"{Name} you are {age},you can ride the Carousel,for {pay2} naira.")
+            answer = str(input(f"{Name} Do you want to take photos during your ride?(Yes/No) "))
+            if answer == "Yes" or answer == "yes":
+                pay2+=50
+                print(f"{Name} Your subtotal = ",int(pay2), "Naira.")
             else:
-                print(f"Your subtotal = ",int(pay2))
+                    print(f"{Name} Your subtotal = ",int(pay2), "Naira.")
         else:
             pay3=2000
-            print(f"You are {age},you can ride the Carousel,for {pay3} naira.")
-            answer = str(input("Do you want to take photos during your ride?(Yes/No) "))
-            if answer == ans:
-                print(f"Your subtotal = ", int(pbill) + int(pay3))
+            print(f"{Name} You are {age},you can ride the Carousel,for {pay3} naira.")
+            answer = str(input(f"{Name} Do you want to take photos during your ride?(Yes/No) "))
+            if answer == "Yes" or answer == "yes":
+                pay3+=50
+                print(f"{Name} Your subtotal = ",int(pay3), "Naira.")
             else:
-                print(f"Your subtotal = ",int(pay3))
-
+                    print(f"{Name} Your subtotal = ",int(pay3), "Naira.")
+        print(f"Enjoy Your Ride {Name}!")
 else:
-    print(f"Your BMI is",int(BMI),"Your weight is too heavy to go into the Carousel")
-print("Enjoy Your Ride!")
+    print(f"{Name} Your BMI is",int(BMI),f"Your weight is too heavy to go into the Carousel (>_<)\nBye {Name}!")
